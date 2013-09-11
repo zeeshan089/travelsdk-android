@@ -1,0 +1,66 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".RentacarSeachActivity" >
+
+ 	<LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Pick up airport -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick up" />
+        <Button
+            android:id="@+id/buttonFrom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="..." />
+
+        <!-- Drop off airport -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drop off" />
+        <Button
+            android:id="@+id/buttonTo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="..." />
+
+        <!-- Departure date -->
+		<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick up date: " />
+		<Button
+		    android:id="@+id/buttonPickUpDate"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" />
+
+        <!-- Return Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drop off date:" />
+		<Button
+		    android:id="@+id/buttonDropOffDate"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" />
+		
+		<Button
+		    android:id="@+id/buttonSearch"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" 
+		    android:text="Search"/>	
+		
+    </LinearLayout>
+
+</ScrollView>

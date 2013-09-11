@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TravelSDKExample</string>
+    <string name="action_settings">Settings</string>
+    <string name="name_or_code">Airport name or IATA code</string>
+    <string name="title_activity_flight_seach">FlightSeachActivity</string>
+    <string name="title_activity_airport_search">AirportSearchActivity</string>
+    <string name="search">Search</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+
+    <string-array name="adults">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="categories">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="radiuses">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="title_activity_flight_results">FlightResultsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_hotel_search">HotelSearchActivity</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_hotel_results">HotelResultsActivity</string>
+    <string name="title_activity_hotel_info">HotelInfoActivity</string>
+    <string name="title_activity_rentacar_seach">RentacarSeachActivity</string>
+    <string name="title_activity_rentacar_results">RentacarResultsActivity</string>
+    <string name="title_activity_excursion_search">ExcursionSearchActivity</string>
+    <string name="title_activity_excursion_results">ExcursionResultsActivity</string>
+    <string name="title_activity_basket">BasketActivity</string>
+    <string name="title_activity_my_bookings">MyBookingsActivity</string>
+
+</resources>

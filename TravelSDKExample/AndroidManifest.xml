@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.travelfed.travelsdk.example"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+   	<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.travelfed.travelsdk.example.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.FlightSeachActivity"
+            android:label="@string/title_activity_flight_seach"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.travelfed.travelsdk.example.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.AirportSearchActivity"
+            android:label="@string/title_activity_airport_search"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.travelfed.travelsdk.example.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.FlightResultsActivity"
+            android:label="@string/title_activity_flight_results"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.HotelSearchActivity"
+            android:label="@string/title_activity_hotel_search"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.travelfed.travelsdk.example.MainActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="YOUR_GOOGLEMAPS_API_KEY" />
+
+        <activity
+            android:name="com.travelfed.travelsdk.example.MapActivity"
+            android:label="@string/title_activity_map"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.HotelResultsActivity"
+            android:label="@string/title_activity_hotel_results"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.HotelInfoActivity"
+            android:label="@string/title_activity_hotel_info"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.RentacarSeachActivity"
+            android:label="@string/title_activity_rentacar_seach"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.RentacarResultsActivity"
+            android:label="@string/title_activity_rentacar_results"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.ExcursionSearchActivity"
+            android:label="@string/title_activity_excursion_search"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.ExcursionResultsActivity"
+            android:label="@string/title_activity_excursion_results"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.BasketActivity"
+            android:label="@string/title_activity_basket"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.travelfed.travelsdk.example.MyBookingsActivity"
+            android:label="@string/title_activity_my_bookings" >
+        </activity>
+    </application>
+
+</manifest>
