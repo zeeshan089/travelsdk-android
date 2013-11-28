@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.rentacar;
 
 import java.util.Calendar;
@@ -5,7 +35,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * Class to store parameters for rentacar search
+ *  Rentacar search parameters
+ *  Documentation: http://wiki.travelsdk.com/index.php?title=Rentacar_requests#Request_Parameters
  */
 public class RentacarSearchParameters {
 	
@@ -65,13 +96,14 @@ public class RentacarSearchParameters {
 	}
 	
 	/**
+	 * Constructs RentacarSearchParameters object with required parameters for search by geolocation.
 	 * 
 	 * @param latitudeFrom - Latitude of a pick up location point.
 	 * @param longitudeFrom - Longitude of a pick up location point.
 	 * @param latitudeTo - Latitude of a drop off location point.
 	 * @param longitudeTo - Longitude of a drop off location point.
-	 * @param departureDate - Departure time in millisecond. Search is only by date(no hours)
-	 * @param returnDate - Return time in millisecond. Search is only by date(no hours)
+	 * @param departureDate - Departure time in millisecond.
+	 * @param returnDate - Return time in millisecond.
 	 */
 	public RentacarSearchParameters(double latitudeFrom, double longitudeFrom, double latitudeTo, double longitudeTo, int departureYear, int departureMonth, int departureDayOfMonth,
 			int returnYear, int returnMonth, int returnDayOfMonth) {
@@ -89,7 +121,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @return Pick up airport IATA code
+	 * @return Pick up airport IATA code. Required on searching by airport.
 	 */
 	public String getFromAirportId() {
 		return fromAirportId;
@@ -97,7 +129,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @param fromAirportId - Pick up airport IATA code
+	 * @param fromAirportId - Pick up airport IATA code. Required on searching by airport.
 	 */
 	public void setFromAirportId(String fromAirportId) {
 		this.fromAirportId = fromAirportId;
@@ -105,7 +137,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @return Drop off airport IATA code
+	 * @return Drop off airport IATA code. Required on searching by airport.
 	 */
 	public String getToAirportId() {
 		return toAirportId;
@@ -113,7 +145,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @param toAirportId - Drop off airport IATA code
+	 * @param toAirportId - Drop off airport IATA code. Required on searching by airport.
 	 */
 	public void setToAirportId(String toAirportId) {
 		this.toAirportId = toAirportId;
@@ -152,7 +184,7 @@ public class RentacarSearchParameters {
 	}
 
 	/**
-	 * Departure date
+	 * Pick up date
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -196,7 +228,7 @@ public class RentacarSearchParameters {
 	}
 
 	/**
-	 * Return date
+	 * Check in date
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -211,6 +243,10 @@ public class RentacarSearchParameters {
 		return airConditioned;
 	}
 
+	/**
+	 *  Air conditioned. Optional
+	 * @param airConditioned
+	 */
 	public void setAirConditioned(boolean airConditioned) {
 		this.airConditioned = airConditioned;
 	}
@@ -219,6 +255,9 @@ public class RentacarSearchParameters {
 		return automaticTransmission;
 	}
 
+	/**
+	 *  Automatic transmission. Optional
+	 */
 	public void setAutomaticTransmission(boolean automaticTransmission) {
 		this.automaticTransmission = automaticTransmission;
 	}
@@ -227,6 +266,9 @@ public class RentacarSearchParameters {
 		return stationWagon;
 	}
 
+	/**
+	 *  Station wago. Optional
+	 */
 	public void setStationWagon(boolean stationWagon) {
 		this.stationWagon = stationWagon;
 	}
@@ -235,6 +277,11 @@ public class RentacarSearchParameters {
 		return category;
 	}
 
+	/**
+	 *  Car category: 0 - all, 1 - mini, 2 - sub compact, 3 - economy, 4 - compact, 5 - midsize, 
+	 *  6 - intermediate, 7 - standard, 8 - full size, 9 - luxury, 10 - premium, 
+	 *  11 - mini van, 23 - unique, 36 - intermediate elite, 32 - special
+	 */
 	public void setCategory(int category) {
 		this.category = category;
 	}
@@ -248,8 +295,7 @@ public class RentacarSearchParameters {
 	}
 
 	/**
-	 * 
-	 * @param lat - Latitude of a pick up location point.
+	 *  Pick up latitude. Required for geolocation search.
 	 */
 	public void setLat(double lat) {
 		this.lat = lat;
@@ -264,8 +310,7 @@ public class RentacarSearchParameters {
 	}
 
 	/**
-	 * 
-	 * @param lon - Longitude of a pick up location point.
+	 *  Pick up longitude. Required for geolocation search.
 	 */
 	public void setLon(double lon) {
 		this.lon = lon;
@@ -289,7 +334,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @return Latitude of a drop off location point. Nan if not set
+	 * @return Drop off latitude. Required for geolocation search.
 	 */
 	public double getLatDropOf() {
 		return latDropOf;
@@ -297,7 +342,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @param latDropOf - Latitude of a drop off location point.
+	 * @param latDropOf Drop off latitude. Required for geolocation search.
 	 */
 	public void setLatDropOf(double latDropOf) {
 		this.latDropOf = latDropOf;
@@ -305,7 +350,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @return Longitude of a drop off location point. Nan if not set
+	 * @return Drop off longitude. Required for geolocation search.
 	 */
 	public double getLonDropOff() {
 		return lonDropOff;
@@ -313,7 +358,7 @@ public class RentacarSearchParameters {
 
 	/**
 	 * 
-	 * @param lonDropOff - Longitude of a drop off location point.
+	 * @param lonDropOff Drop off longitude. Required for geolocation search.
 	 */
 	public void setLonDropOff(double lonDropOff) {
 		this.lonDropOff = lonDropOff;

@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.excursion;
 
 import java.util.Date;
@@ -9,8 +39,6 @@ import com.travelfed.travelsdk.util.StringUtil;
 
 /**
  * Base class for excursion and altoffers
- * 
- * @author krumstoilov
  * 
  */
 public class Offer {
@@ -247,12 +275,14 @@ public class Offer {
 		return searchingState;
 	}
 
-	/** @param lon */
+	/** @param longitude */
 	public void setLon(String lon) {
 		this.lon = lon;
 	}
 
-	/** @return lon */
+	/**
+	 *  Longitude
+	 */
 	public String getLon() {
 		return lon;
 	}
@@ -292,7 +322,9 @@ public class Offer {
 		this.cur = cur;
 	}
 
-	/** @return cur */
+	/**
+	 *  Currency code
+	 */
 	public String getCur() {
 		return cur;
 	}
@@ -302,7 +334,9 @@ public class Offer {
 		this.cname = cname;
 	}
 
-	/** @return cname */
+	/**
+	 *  Same as productType(sightseeing, museum, attraction, ...)
+	 */
 	public String getCname() {
 		return cname;
 	}
@@ -312,7 +346,9 @@ public class Offer {
 		this.productType = productType;
 	}
 
-	/** @return productType */
+	/**
+	 *  Product type (sightseeing, museum, attraction, ...)
+	 */
 	public String getProductType() {
 		return productType;
 	}
@@ -372,7 +408,9 @@ public class Offer {
 		this.name = name;
 	}
 
-	/** @return name */
+	/**
+	 *  Short excursion name
+	 */
 	public String getName() {
 		return name;
 	}
@@ -382,7 +420,9 @@ public class Offer {
 		this.description = description;
 	}
 
-	/** @return description */
+	/**
+	 *  Full excursion description.
+	 */
 	public String getDescription() {
 		return description;
 	}
@@ -407,7 +447,9 @@ public class Offer {
 		return otam;
 	}
 
-	/** @param childPrice */
+	/**
+	 *  Price per child
+	 */
 	public void setChildPrice(String childPrice) {
 		this.childPrice = childPrice;
 	}
@@ -442,7 +484,9 @@ public class Offer {
 		this.city = city;
 	}
 
-	/** @return city */
+	/**
+	 *  City
+	 */
 	public String getCity() {
 		return city;
 	}
@@ -482,7 +526,9 @@ public class Offer {
 		this.adultPrice = adultPrice;
 	}
 
-	/** @return adultPrice */
+	/**
+	 *  Price per adult
+	 */
 	public String getAdultPrice() {
 		return adultPrice;
 	}
@@ -682,7 +728,9 @@ public class Offer {
 		this.thumb = thumb;
 	}
 
-	/** @return thumb */
+	/**
+	 *  Thumb image url
+	 */
 	public String getThumb() {
 		return thumb;
 	}

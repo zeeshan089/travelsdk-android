@@ -1,12 +1,40 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.flight;
 
 import java.util.Arrays;
 
 /**
- * Filter parameters for a flight search results
- * 
- * @author krumstoilov
- *
+ * Filter parameters for a flight search.
+ * Documentation: http://wiki.travelsdk.com/index.php?title=Flight_requests#Result_Filters
  */
 public class FlightFilterParameters {
 
@@ -27,6 +55,9 @@ public class FlightFilterParameters {
 		return offset;
 	}
 
+	/**
+	 *  Results offset used for pagination.
+	 */
 	public void setOffset(int offset) {
 		this.offset = offset;
 	}
@@ -35,6 +66,9 @@ public class FlightFilterParameters {
 		return directOnly;
 	}
 
+	/**
+	 *  Show only direct flights
+	 */
 	public void setDirectOnly(boolean directOnly) {
 		this.directOnly = directOnly;
 	}
@@ -43,6 +77,9 @@ public class FlightFilterParameters {
 		return maxStopsOut;
 	}
 
+	/**
+	 *  Maximum stops for outbound flight.
+	 */
 	public void setMaxStopsOut(short maxStopsOut) {
 		this.maxStopsOut = maxStopsOut;
 	}
@@ -51,6 +88,9 @@ public class FlightFilterParameters {
 		return maxStopsIn;
 	}
 
+	/**
+	 *  Maximum stops for inbound flight.
+	 */
 	public void setMaxStopsIn(short maxStopsIn) {
 		this.maxStopsIn = maxStopsIn;
 	}
@@ -59,6 +99,9 @@ public class FlightFilterParameters {
 		return minOutDepartureTime;
 	}
 
+	/**
+	 *  Minimum outbound flight departure time.
+	 */
 	public void setMinOutDepartureTime(short minOutDepartureTime) {
 		this.minOutDepartureTime = minOutDepartureTime;
 	}
@@ -67,6 +110,9 @@ public class FlightFilterParameters {
 		return maxOutDepartureTime;
 	}
 
+	/**
+	 *  Maximum outbound flight departure time.
+	 */
 	public void setMaxOutDepartureTime(short maxOutDepartureTime) {
 		this.maxOutDepartureTime = maxOutDepartureTime;
 	}
@@ -75,6 +121,9 @@ public class FlightFilterParameters {
 		return minInDepartureTime;
 	}
 
+	/**
+	 *  Minimum inbound flight departure time.
+	 */
 	public void setMinInDepartureTime(short minInDepartureTime) {
 		this.minInDepartureTime = minInDepartureTime;
 	}
@@ -83,6 +132,9 @@ public class FlightFilterParameters {
 		return maxInDepartureTime;
 	}
 
+	/**
+	 *  Maximum inbound flight departure time.
+	 */
 	public void setMaxInDepartureTime(short maxInDepartureTime) {
 		this.maxInDepartureTime = maxInDepartureTime;
 	}
@@ -91,6 +143,9 @@ public class FlightFilterParameters {
 		return airlineCodes;
 	}
 
+	/**
+	 *  Filter by airlines. (airline[]=AA&airline[]=UAÉ)
+	 */
 	public void setAirlineCodes(String[] airlineCodes) {
 		this.airlineCodes = airlineCodes;
 	}
@@ -99,6 +154,9 @@ public class FlightFilterParameters {
 		return minPrice;
 	}
 
+	/**
+	 *  Minimum price.
+	 */
 	public void setMinPrice(float minPrice) {
 		this.minPrice = minPrice;
 	}
@@ -107,6 +165,9 @@ public class FlightFilterParameters {
 		return maxPrice;
 	}
 
+	/**
+	 *  Maximim price.
+	 */
 	public void setMaxPrice(float maxPrice) {
 		this.maxPrice = maxPrice;
 	}
@@ -115,6 +176,9 @@ public class FlightFilterParameters {
 		return cabinClasses;
 	}
 
+	/**
+	 *  Filter by cabin class. (cabin_class []=Y&cabin_class []=FÉ)
+	 */
 	public void setCabinClasses(String[] cabinClasses) {
 		this.cabinClasses = cabinClasses;
 	}

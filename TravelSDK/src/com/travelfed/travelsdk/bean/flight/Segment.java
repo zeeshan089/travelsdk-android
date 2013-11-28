@@ -1,4 +1,34 @@
-package com.travelfed.travelsdk.bean.flight;
+
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */package com.travelfed.travelsdk.bean.flight;
 
 import java.util.Date;
 
@@ -7,17 +37,18 @@ import org.json.JSONObject;
 
 import com.travelfed.travelsdk.util.StringUtil;
 
+/**
+ *  Flight segment with orign and destination airports.
+ */
 public class Segment {
 	
 	private Bookingclass bookingclass;
 	private String duration;
 	private String flightNumber;
-//	private String aircraft;
 	private String deptime;
 	private Date depdate;
 	private String destination; 
 	private String origin; 
-//	private String stops; not needed
 	private String arrtime;
 	private Date arrdate;
 
@@ -47,9 +78,6 @@ public class Segment {
 				flightNumber = carrierObject.getString(IDENT);
 			}
 		}
-//		if (json.has(AIRCRAFT)) {
-//			this.setAircraft(json.getString(AIRCRAFT));
-//		}
 		if (json.has(DEPDATE)) {
 			String sDate = json.getString(DEPDATE);
 			this.setDepdate(StringUtil.parseDate(sDate));
@@ -61,9 +89,6 @@ public class Segment {
 		if (json.has(ORIGIN)) {
 			this.setOrigin(parseAirport(json.getJSONObject(ORIGIN)));
 		}
-//		if (json.has("stops")) {
-//			this.setStops(json.getString("stops"));
-//		}
 		if (json.has(ARRDATE)) {
 			String sDate = json.getString(ARRDATE);
 			this.setArrdate(StringUtil.parseDate(sDate));
@@ -91,15 +116,17 @@ public class Segment {
 
 	/** @param duration in minutes */
 	public void setDuration(String duration) {
-		this.duration = duration;// protocol changed StringUtil.minutesToDisplayable(duration);
+		this.duration = duration;
 	}
 
-	/** @return duration */
+	/** @return duration in minutes */
 	public String getDuration() {
 		return duration;
 	}
 
-
+	/**
+	 *  Flight number
+	 */
 	public String getFlightNumber() {
 		return flightNumber;
 	}
@@ -108,22 +135,14 @@ public class Segment {
 		this.flightNumber = flightNumber;
 	}
 
-//	/** @param aircraft */
-//	public void setAircraft(String aircraft) {
-//		this.aircraft = aircraft;
-//	}
-//
-//	/** @return aircraft */
-//	public String getAircraft() {
-//		return aircraft;
-//	}
-
 	/** @param deptime */
 	public void setDeptime(String deptime) {
 		this.deptime = StringUtil.convertTimeToNormalForm(deptime);
 	}
 
-	/** @return deptime */
+	/**
+	 *  Departure time
+	 */
 	public String getDeptime() {
 		return deptime;
 	}
@@ -133,7 +152,9 @@ public class Segment {
 		this.depdate = depdate;
 	}
 
-	/** @return depdate */
+	/**
+	 *  Departure date
+	 */
 	public Date getDepdate() {
 		return depdate;
 	}
@@ -143,7 +164,9 @@ public class Segment {
 		this.destination = destination;
 	}
 
-	/** @return destination */
+	/**
+	 *  Destination airport
+	 */
 	public String getDestination() {
 		return destination;
 	}
@@ -153,27 +176,21 @@ public class Segment {
 		this.origin = origin;
 	}
 
-	/** @return origin */
+	/**
+	 *  Origin airport
+	 */
 	public String getOrigin() {
 		return origin;
 	}
-
-//	/** @param stops */
-//	public void setStops(String stops) {
-//		this.stops = stops;
-//	}
-//
-//	/** @return stops */
-//	public String getStops() {
-//		return stops;
-//	}
 
 	/** @param arrtime */
 	public void setArrtime(String arrtime) {
 		this.arrtime = StringUtil.convertTimeToNormalForm(arrtime);
 	}
 
-	/** @return arrtime */
+	/**
+	 *  Arrival time
+	 */
 	public String getArrtime() {
 		return arrtime;
 	}
@@ -183,7 +200,9 @@ public class Segment {
 		this.arrdate = arrdate;	
 	}
 
-	/** @return arrdate */
+	/**
+	 *  Arrival date
+	 */
 	public Date getArrdate() {
 		return arrdate;
 	}

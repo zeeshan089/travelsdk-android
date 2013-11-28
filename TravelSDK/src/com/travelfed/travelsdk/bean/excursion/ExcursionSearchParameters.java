@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.excursion;
 
 import java.util.Arrays;
@@ -7,13 +37,9 @@ import java.util.GregorianCalendar;
 
 
 /**
- * Class to store parameters for excursion search.
- * Documentation <a href=
- * "http://wiki.travelsdk.com/index.php?title=Excursion_requests"
- * >http://wiki.travelsdk.com/index.php?title=Excursion_requests"</a>
- * 
- * @author krumstoilov
- * 
+ * Excursion search parameters.
+ * Documentation http://wiki.travelsdk.com/index.php?title=Excursion_requests
+ *
  */
 public class ExcursionSearchParameters {
 
@@ -49,10 +75,10 @@ public class ExcursionSearchParameters {
 	/**
 	 * Constructs HotelSearchParameters object with required parameters for search by airport code
 	 * 
-	 * @param airportId - Airport IATA code
-	 * @param fromDate - Time in millisecond. Search is only by date(no hours) 
-	 * @param toDate -  Time in millisecond. Search is only by date(no hours) 
-	 * @param numberOfAdults
+	 * @param airportId Airport IATA code
+	 * @param fromDate Time in millisecond. Search is only by date(will ignore hours and minutes) 
+	 * @param toDate Time in millisecond. Search is only by date(will ignore hours and minutes) 
+	 * @param numberOfAdults Number of adults.
 	 */
 	public ExcursionSearchParameters(String airportId, int fromDateYear, int fromDateMonth, int fromDateDayOfMonth,
 			int toDateYear, int toDateMonth, int toDateDayOfMonth, int numberOfAdults) {
@@ -67,12 +93,13 @@ public class ExcursionSearchParameters {
 	}
 	
 	/**
+	 * Constructs ExcursionSearchParameters object with required parameters for geolocation search.
 	 * 
-	 * @param latitude - Latitude of a center search point.
-	 * @param longitude - Longitude of a center search point.
-	 * @param fromDate - Time in millisecond. Search is only by date(no hours) 
-	 * @param toDate - Time in millisecond. Search is only by date(no hours) 
-	 * @param numberOfAdults
+	 * @param latitude Latitude of a center search point.
+	 * @param longitude Longitude of a center search point.
+	 * @param fromDate Time in millisecond. Search is only by date(will ignore hours and minutes) 
+	 * @param toDate Time in millisecond. Search is only by date(will ignore hours and minutes) 
+	 * @param numberOfAdults Number of adults.
 	 */
 	public ExcursionSearchParameters(double latitude, double longitude, int fromDateYear, int fromDateMonth, int fromDateDayOfMonth,
 			int toDateYear, int toDateMonth, int toDateDayOfMonth, int numberOfAdults) {
@@ -97,7 +124,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @param airportId - Airport IATA code
+	 * @param airportId - Airport IATA code. Required for geo location search.
 	 */
 	public void setAirportId(String airportId) {
 		this.airportId = airportId;
@@ -105,7 +132,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @return Latitude of a center search point.
+	 * @return Latitude of a center search point. Required for geolocation search.
 	 */
 	public double getLat() {
 		return lat;
@@ -113,7 +140,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @param lat - Latitude of a center search point.
+	 * @param lat - Latitude of a center search point. Required for geo location search.
 	 */
 	public void setLat(double lat) {
 		this.lat = lat;
@@ -121,7 +148,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @return - Longitude of a center search point.
+	 * @return - Longitude of a center search point. Required for geo location search.
 	 */
 	public double getLon() {
 		return lon;
@@ -129,7 +156,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @param lon - Longitude of a center search point.
+	 * @param lon - Longitude of a center search point. Required for geo location search.
 	 */
 	public void setLon(double lon) {
 		this.lon = lon;
@@ -137,7 +164,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @return from date year
+	 * @return from date year. Required
 	 */
 	public int getFromDateYear() {
 		return fromDateYear;
@@ -145,7 +172,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @return from date month
+	 * @return from date month. Required
 	 */
 	public int getFromDateMonth() {
 		return fromDateMonth;
@@ -153,7 +180,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @return fromDate date day of month
+	 * @return fromDate date day of month. Required
 	 */
 	public int getFromDateDayOfMonth() {
 		return fromDateDayOfMonth;
@@ -161,14 +188,14 @@ public class ExcursionSearchParameters {
 	
 	/**
 	 * 
-	 * @return From date
+	 * @return From date. Required
 	 */
 	public Date getFromDate() {
 		return new GregorianCalendar(fromDateYear, fromDateMonth, fromDateDayOfMonth).getTime();
 	}
 
 	/**
-	 * From date
+	 * From date. Required
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -211,7 +238,7 @@ public class ExcursionSearchParameters {
 	}
 	
 	/**
-	 * To date
+	 * To date. Required
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -224,7 +251,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @return Search area radius in km when searching by geolocation. Default is 10km.
+	 * @return Search area radius in km. Note: If airport search is requested, the radius parameter is ignored. Default is 10km
 	 */
 	public float getRadius() {
 		return radius;
@@ -232,7 +259,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @param radius - Search area radius in km when searching by geolocation.
+	 * @param radius - Search area radius in km. Note: If airport search is requested, the radius parameter is ignored.
 	 */
 	public void setRadius(float radius) {
 		this.radius = radius;
@@ -256,7 +283,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @return Array of all children ages
+	 * @return Array of all children ages. Maximum 3 children.
 	 */
 	public int[] getChildrenAges() {
 		return childrenAges;
@@ -264,7 +291,7 @@ public class ExcursionSearchParameters {
 
 	/**
 	 * 
-	 * @param childrenAges - Array of all children ages
+	 * @param childrenAges - Array of all children ages. Maximum 3 children.
 	 */
 	public void setChildrenAges(int[] childrenAges) {
 		this.childrenAges = childrenAges;

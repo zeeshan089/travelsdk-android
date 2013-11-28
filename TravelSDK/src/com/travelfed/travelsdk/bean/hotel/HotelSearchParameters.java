@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.hotel;
 
 import java.util.Calendar;
@@ -5,8 +35,9 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * Class to store parameters for hotel search
- *
+ *  Hotel search parameters.
+ *  Documentation: http://wiki.travelsdk.com/index.php?title=Hotel_requests#Request_Parameters
+ * 
  */
 public class HotelSearchParameters implements BoardTypes {
 
@@ -42,12 +73,12 @@ public class HotelSearchParameters implements BoardTypes {
 	}
 	
 	/**
-	 * Constructs HotelSearchParameters object with required parameters for search
+	 * Constructs HotelSearchParameters object with required parameters for geolocation search
 	 * 
 	 * @param latitude - Latitude of a center search point.
 	 * @param longitude - Longitude of a center search point.
-	 * @param departureDate - Departure time in millisecond. Search is only by date(no hours) 
-	 * @param returnDate - Return time in millisecond. Search is only by date(no hours)
+	 * @param departureDate - Departure time in millisecond.  
+	 * @param returnDate - Return time in millisecond.
 	 * @param roomsPersons - Distribution of the guests in room
 	 */
 	public HotelSearchParameters(double latitude, double longitude, int departureYear, int departureMonth, int departureDayOfMonth,
@@ -65,7 +96,7 @@ public class HotelSearchParameters implements BoardTypes {
 
 	/**
 	 * 
-	 * @return Search area radius in km
+	 * @return Search area radius in km. For geolocation search only.
 	 */
 	public int getRadius() {
 		return radius;
@@ -73,7 +104,7 @@ public class HotelSearchParameters implements BoardTypes {
 
 	/**
 	 * 
-	 * @param radius - Search area radius in km. Default is 10km
+	 * @param radius - Search area radius in km. Default is 10km. For geolocation search only.
 	 */
 	public void setRadius(int radius) {
 		this.radius = radius;
@@ -144,7 +175,7 @@ public class HotelSearchParameters implements BoardTypes {
 	}
 	
 	/**
-	 * Departure date
+	 * Check in date. Required.
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -188,7 +219,7 @@ public class HotelSearchParameters implements BoardTypes {
 	}
 
 	/**
-	 * Return date
+	 * Check out date. Required.
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -201,7 +232,7 @@ public class HotelSearchParameters implements BoardTypes {
 	
 	/**
 	 * 
-	 * @return Distribution of the guests in the room
+	 * @return Distribution of the guests in the room.
 	 */
 	public RoomPersons getRoomPersons() {
 		return roomPersons;
@@ -219,6 +250,10 @@ public class HotelSearchParameters implements BoardTypes {
 		return provider;
 	}
 
+	/**
+	 * Comma separated providers list. Make requests only to these providers. Optional.
+	 * @param provider
+	 */
 	public void setProvider(String provider) {
 		this.provider = provider;
 	}
@@ -229,7 +264,7 @@ public class HotelSearchParameters implements BoardTypes {
 
 	/**
 	 * 
-	 * @param minHotelCategory - Set from 0 to 5
+	 * @param minHotelCategory - Set from 0 to 5. Optional.
 	 */
 	public void setMinHotelCategory(short minHotelCategory) {
 		this.minHotelCategory = minHotelCategory;
@@ -245,7 +280,7 @@ public class HotelSearchParameters implements BoardTypes {
 
 	/**
 	 * 
-	 * @param boardType - Board type code
+	 * @param boardType - Board type code. Optional.
 	 */
 	public void setBoardType(String boardType) {
 		this.boardType = boardType;

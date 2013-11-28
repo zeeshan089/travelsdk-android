@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.rentacar;
 
 import java.util.ArrayList;
@@ -7,6 +37,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ *  Rentacar from rentacar search result.
+ */
 public class Rentacar {
 	
 	private RentacarsResult rentacarsResult;
@@ -162,6 +195,9 @@ public class Rentacar {
 		}
 	}
 
+	/**
+	 *  Rentacars result.
+	 */
 	public RentacarsResult getRentacarsResult() {
 		return rentacarsResult;
 	}
@@ -171,7 +207,7 @@ public class Rentacar {
 		this.duration = duration;
 	}
 
-	/** @return duration */
+	/** @return Rent duration */
 	public int getDuration() {
 		return duration;
 	}
@@ -216,7 +252,7 @@ public class Rentacar {
 		this.currency = currency;
 	}
 
-	/** @return currency */
+	/** @return currency code */
 	public String getCurrency() {
 		return currency;
 	}
@@ -231,12 +267,12 @@ public class Rentacar {
 		return referenceid;
 	}
 
-	/** @param TermsConditions */
+	/** @param termsConditions */
 	public void setTermsConditions(String termsConditions) {
 		this.termsConditions = termsConditions;
 	}
 
-	/** @return TermsConditions */
+	/** @return Terms and conditions */
 	public String getTermsConditions() {
 		return termsConditions;
 	}
@@ -256,7 +292,7 @@ public class Rentacar {
 		this.modelname = modelname;
 	}
 
-	/** @return modelname */
+	/** @return Car mark and model. */
 	public String getModelname() {
 		return modelname;
 	}
@@ -266,7 +302,7 @@ public class Rentacar {
 		this.picture = picture;
 	}
 
-	/** @return picture */
+	/** @return Picture url. */
 	public String getPicture() {
 		return picture;
 	}
@@ -386,7 +422,9 @@ public class Rentacar {
 		this.totalprice = totalprice;
 	}
 
-	/** @return totalprice */
+	/**
+	 *  Total price.
+	 */
 	public String getTotalprice() {
 		return totalprice;
 	}
@@ -396,7 +434,9 @@ public class Rentacar {
 		this.baggage = baggage;
 	}
 
-	/** @return baggage */
+	/**
+	 *  Bagage.
+	 */
 	public String getBaggage() {
 		return baggage;
 	}
@@ -406,7 +446,9 @@ public class Rentacar {
 		this.doors = doors;
 	}
 
-	/** @return doors */
+	/**
+	 *  Number of doors.
+	 */
 	public String getDoors() {
 		return doors;
 	}

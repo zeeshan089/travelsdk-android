@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.flight;
 
 import java.io.Serializable;
@@ -5,6 +35,9 @@ import java.io.Serializable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Airport from airport search result.
+ */
 public class Airport implements Serializable {
 	
 	private static final long serialVersionUID = 1848328345976113304L;
@@ -40,6 +73,9 @@ public class Airport implements Serializable {
 		}
 	}
 
+	/**
+	 *  City name
+	 */
 	public String getCity() {
 		return city;
 	}
@@ -53,7 +89,9 @@ public class Airport implements Serializable {
 		this.lat = lat;
 	}
 
-	/** @return lat */
+	/**
+	 *  Latitude
+	 */
 	public String getLat() {
 		return lat;
 	}
@@ -63,11 +101,16 @@ public class Airport implements Serializable {
 		this.lon = lon;
 	}
 
-	/** @return lon */
+	/**
+	 *  Longitude
+	 */
 	public String getLon() {
 		return lon;
 	}
 
+	/**
+	 *  Country code
+	 */
 	public String getCountry() {
 		return country;
 	}
@@ -76,6 +119,9 @@ public class Airport implements Serializable {
 		this.country = country;
 	}
 
+	/**
+	 *  Airport name
+	 */
 	public String getAirportName() {
 		return airportName;
 	}
@@ -89,7 +135,9 @@ public class Airport implements Serializable {
 		this.id = id;
 	}
 
-	/** @return id */
+	/**
+	 *  Airport code (3-letter)
+	 */
 	public String getId() {
 		return id;
 	}

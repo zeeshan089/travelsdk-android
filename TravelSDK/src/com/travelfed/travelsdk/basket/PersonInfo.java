@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.basket;
 
 import java.util.Locale;
@@ -5,14 +35,22 @@ import java.util.Locale;
 import com.travelfed.travelsdk.util.StringUtil;
 
 /**
- * Class for store person(contact person or traveler) information
+ * Class for person(contact person or traveler, quest) data.
  */
 public class PersonInfo {
 
+	/**
+	 *  Person Adult type
+	 */
 	public final static String TYPE_ADULT = "adt";
+	/**
+	 *  Person Child type
+	 */
 	public final static String TYPE_CHILD = "chd";
+	/**
+	 *  Person Infant type
+	 */
 	public final static String TYPE_INFANT = "inf";
-	
 	
 	private String firstName;
 	private String lastName;
@@ -52,6 +90,9 @@ public class PersonInfo {
 		return firstName;
 	}
 
+	/**
+	 *  First name. Required
+	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -60,6 +101,9 @@ public class PersonInfo {
 		return lastName;
 	}
 
+	/**
+	 *  Last name. Required
+	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
@@ -68,6 +112,9 @@ public class PersonInfo {
 		return type;
 	}
 
+	/**
+	 *  Type (adult - TYPE_ADULT, child - TYPE_CHILD, infant - TYPE_INFANT). Required.
+	 */
 	public void setType(String type) {
 		this.type = type;
 	}
@@ -92,6 +139,9 @@ public class PersonInfo {
 		return salutation;
 	}
 
+	/**
+	 *  Salutation. Mr ot Mrs
+	 */
 	public void setSalutation(String salutation) {
 		this.salutation = salutation;
 	}
@@ -100,6 +150,9 @@ public class PersonInfo {
 		return country;
 	}
 
+	/**
+	 *  Country name. Required
+	 */
 	public void setCountry(String country) {
 		this.country = country;
 	}
@@ -108,6 +161,9 @@ public class PersonInfo {
 		return city;
 	}
 
+	/**
+	 *  City name. Required for contact person.
+	 */
 	public void setCity(String city) {
 		this.city = city;
 	}
@@ -115,7 +171,10 @@ public class PersonInfo {
 	public String getStreet() {
 		return street;
 	}
-
+	
+	/**
+	 *  Street address. Required for contact person.
+	 */
 	public void setStreet(String street) {
 		this.street = street;
 	}
@@ -124,6 +183,9 @@ public class PersonInfo {
 		return zip;
 	}
 
+	/**
+	 *  Zip code. Required for contact person.
+	 */
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
@@ -132,6 +194,9 @@ public class PersonInfo {
 		return phone;
 	}
 
+	/**
+	 *  Phone number. Required for contact person.
+	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -140,6 +205,9 @@ public class PersonInfo {
 		return email;
 	}
 
+	/**
+	 *  Email. Required for contact person.
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -148,6 +216,9 @@ public class PersonInfo {
 		return company;
 	}
 
+	/**
+	 *  Company name. For contact person only. Optional.
+	 */
 	public void setCompany(String company) {
 		this.company = company;
 	}
@@ -156,6 +227,9 @@ public class PersonInfo {
 		return companyVat;
 	}
 
+	/**
+	 *  Company vat. For contact person only. Optional.
+	 */
 	public void setCompanyVat(String companyVat) {
 		this.companyVat = companyVat;
 	}
@@ -167,12 +241,37 @@ public class PersonInfo {
 		return countryCode;
 	}
 
+	/**
+	 *  Country code. Required for contact person.
+	 */
 	public void setCountryCode(String countryCode) {
 		if (StringUtil.isNullOrEmpty(countryCode)) {
 			this.countryCode = Locale.getDefault().getCountry();
 			return;
 		}
 		this.countryCode = countryCode;
+	}
+	
+	public String getPhoneCountryCode() {
+		return phoneCountryCode;
+	}
+
+	/**
+	 *  Phone country code. Required for contact person.
+	 */
+	public void setPhoneCountryCode(String phoneCountryCode) {
+		this.phoneCountryCode = phoneCountryCode;
+	}
+
+	public String getPhoneAreaCode() {
+		return phoneAreaCode;
+	}
+
+	/**
+	 *  Phone area code. Required for contact person.
+	 */
+	public void setPhoneAreaCode(String phoneAreaCode) {
+		this.phoneAreaCode = phoneAreaCode;
 	}
 	
 	public boolean isAdult() {
@@ -199,6 +298,9 @@ public class PersonInfo {
 		return passport;
 	}
 
+	/**
+	 *  Passport number. Only for flight bookings. For required check flight verify result.
+	 */
 	public void setPassport(String pasport) {
 		this.passport = pasport;
 	}
@@ -207,6 +309,9 @@ public class PersonInfo {
 		return passportIssueYear;
 	}
 
+	/**
+	 *  Passport issue year. Only for flight bookings. For required check flight verify result.
+	 */
 	public void setPassportIssueYear(int passportIssueYear) {
 		this.passportIssueYear = passportIssueYear;
 	}
@@ -215,6 +320,9 @@ public class PersonInfo {
 		return passportIssueMonth;
 	}
 
+	/**
+	 *  Passport issue month. Only for flight bookings. For required check flight verify result.
+	 */
 	public void setPassportIssueMonth(int passportIssueMonth) {
 		this.passportIssueMonth = passportIssueMonth;
 	}
@@ -223,6 +331,9 @@ public class PersonInfo {
 		return passportIssueDayOfMonth;
 	}
 
+	/**
+	 *  Passport issue day of month. Only for flight bookings. For required check flight verify result.
+	 */
 	public void setPassportIssueDayOfMonth(int passportIssueDayOfMonth) {
 		this.passportIssueDayOfMonth = passportIssueDayOfMonth;
 	}
@@ -231,6 +342,9 @@ public class PersonInfo {
 		return passportExpireYear;
 	}
 
+	/**
+	 *  Passport expire year. Only for flight bookings. For required check flight verify result.
+	 */
 	public void setPassportExpireYear(int passportExpireYear) {
 		this.passportExpireYear = passportExpireYear;
 	}
@@ -239,14 +353,21 @@ public class PersonInfo {
 		return passportExpireMonth;
 	}
 
+	/**
+	 *  Passport expire month. Only for flight bookings. For required check flight verify result.
+	 */
 	public void setPassportExpireMonth(int passportExpireMonth) {
 		this.passportExpireMonth = passportExpireMonth;
 	}
 
+	
 	public int getPassportExpireDayOfMonth() {
 		return passportExpireDayOfMonth;
 	}
 
+	/**
+	 *  Passport expire day of month. Only for flight bookings. For required check flight verify result.
+	 */
 	public void setPassportExpireDayOfMonth(int passportExpireDayOfMonth) {
 		this.passportExpireDayOfMonth = passportExpireDayOfMonth;
 	}
@@ -284,22 +405,6 @@ public class PersonInfo {
 
 	public String toString() {
 		return firstName + StringUtil.SPACE_STRING + lastName;
-	}
-
-	public String getPhoneCountryCode() {
-		return phoneCountryCode;
-	}
-
-	public void setPhoneCountryCode(String phoneCountryCode) {
-		this.phoneCountryCode = phoneCountryCode;
-	}
-
-	public String getPhoneAreaCode() {
-		return phoneAreaCode;
-	}
-
-	public void setPhoneAreaCode(String phoneAreaCode) {
-		this.phoneAreaCode = phoneAreaCode;
 	}
 
 }

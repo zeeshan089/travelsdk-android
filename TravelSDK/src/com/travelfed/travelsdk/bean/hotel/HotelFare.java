@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.hotel;
 
 import java.util.Date;
@@ -8,6 +38,9 @@ import org.json.JSONObject;
 import com.travelfed.travelsdk.Logger;
 import com.travelfed.travelsdk.util.StringUtil;
 
+/**
+ *  Hotel fare from hotel search results
+ */
 public class HotelFare {
 	
 	private HotelsResult hotelsFaresResult;
@@ -146,10 +179,16 @@ public class HotelFare {
 		}
 	}
 
+	/**
+	 *  Hotel results from hotel search request
+	 */
 	public HotelsResult getHotelsFaresResult() {
 		return hotelsFaresResult;
 	}
 
+	/**
+	 *  Currency code
+	 */
 	public String getCurrency() {
 		return currency;
 	}
@@ -158,6 +197,9 @@ public class HotelFare {
 		this.currency = currency;
 	}
 
+	/**
+	 *  Hotel category 0-6
+	 */
 	public int getHotelCategory() {
 		return hotelCategory;
 	}
@@ -166,6 +208,9 @@ public class HotelFare {
 		this.hotelCategory = hotelCategory;
 	}
 
+	/**
+	 *  Longitude
+	 */
 	public double getLongitude() {
 		return longitude;
 	}
@@ -174,6 +219,9 @@ public class HotelFare {
 		this.longitude = longtitude;
 	}
 
+	/**
+	 *  Distance in km.
+	 */
 	public String getDistance() {
 		return distance;
 	}
@@ -187,6 +235,9 @@ public class HotelFare {
 		this.distance += "km";
 	}
 
+	/**
+	 *  Latitude
+	 */
 	public double getLatitude() {
 		return latitude;
 	}
@@ -195,6 +246,9 @@ public class HotelFare {
 		this.latitude = latitude;
 	}
 
+	/**
+	 *  Board type description
+	 */
 	public String getBoardTypeDescription() {
 		return boardTypeDescription;
 	}
@@ -206,6 +260,9 @@ public class HotelFare {
 		this.boardTypeDescription = boardTypeDescription;
 	}
 
+	/**
+	 *  Price per adult.
+	 */
 	public String getAdultPrice() {
 		return adultPrice;
 	}
@@ -214,6 +271,9 @@ public class HotelFare {
 		this.adultPrice = adultPrice;
 	}
 
+	/**
+	 *  Board type code.
+	 */
 	public String getBoardType() {
 		return boardType;
 	}
@@ -222,6 +282,9 @@ public class HotelFare {
 		this.boardType = boardType;
 	}
 
+	/**
+	 *  Price per child
+	 */
 	public String getChildrenPrice() {
 		return childrenPrice;
 	}
@@ -230,6 +293,9 @@ public class HotelFare {
 		this.childrenPrice = childrenPrice;
 	}
 
+	/**
+	 *  Check in date
+	 */
 	public Date getCheckin() {
 		return checkin;
 	}
@@ -238,6 +304,9 @@ public class HotelFare {
 		this.checkin = checkin;
 	}
 
+	/**
+	 *  Picture url
+	 */
 	public String getPicture() {
 		return picture;
 	}
@@ -262,6 +331,9 @@ public class HotelFare {
 		this.id = id;
 	}
 
+	/**
+	 *  Room name
+	 */
 	public String getRoomName() {
 		return roomName;
 	}
@@ -270,6 +342,9 @@ public class HotelFare {
 		this.roomName = roomName;
 	}
 
+	/**
+	 *  Country code
+	 */
 	public String getCountry() {
 		return country;
 	}
@@ -286,6 +361,9 @@ public class HotelFare {
 		this.roomLocationCode = roomLocationCode;
 	}
 
+	/**
+	 *  Nights.
+	 */
 	public int getDuration() {
 		return duration;
 	}
@@ -302,6 +380,9 @@ public class HotelFare {
 		this.roomType = roomType;
 	}
 
+	/**
+	 *  Short information.
+	 */
 	public String getInfo() {
 		return info;
 	}
@@ -310,6 +391,9 @@ public class HotelFare {
 		this.info = info;
 	}
 
+	/**
+	 *  Total price.
+	 */
 	public String getTotalPrice() {
 		return totalPrice;
 	}

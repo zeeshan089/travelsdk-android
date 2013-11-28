@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.flight;
 
 import java.util.Calendar;
@@ -5,15 +35,24 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * Class to store parameters for flight search
- * @author krumstoilov
- *
+ * Flight search parameters.
+ * Documentation: http://wiki.travelsdk.com/index.php?title=Flight_requests#Request_Parameters
  */
 public class FlightSearchParameters {
 
-	
+	/**
+	 *  Economy cabin class code
+	 */
 	public static final String CABIN_CLASS_ECONOMY = "Y";
-	public static final String CABIN_CLASS_BUISNESS = "C";
+	
+	/**
+	 *  Business cabin class code
+	 */
+	public static final String CABIN_CLASS_BUSINESS = "C";
+	
+	/**
+	 *  First cabin class code
+	 */
 	public static final String CABIN_CLASS_FIRST = "F";
 	
 	private String fromAirportId;
@@ -51,7 +90,7 @@ public class FlightSearchParameters {
 	}
 	
 	/**
-	 * Constructs FlightSearchParameters object with required parameters for search
+	 * Constructs FlightSearchParameters object with required parameters for one way flight search
 	 * 
 	 * @param fromAirportId - Departure airport IATA code
 	 * @param toAirportId - Arrival airport IATA code
@@ -64,7 +103,7 @@ public class FlightSearchParameters {
 	}
 	
 	/**
-	 * Constructs FlightSearchParameters object with required parameters for round trip search
+	 * Constructs FlightSearchParameters object with required parameters for round trip flight search
 	 * 
 	 * @param fromAirportId - Departure airport IATA code
 	 * @param toAirportId - Arrival airport IATA code
@@ -91,8 +130,7 @@ public class FlightSearchParameters {
 	}
 
 	/**
-	 * 
-	 * @return Departure airport IATA code
+	 *  Departure airport IATA code. Required
 	 */
 	public String getFromAirportId() {
 		return fromAirportId;
@@ -100,7 +138,7 @@ public class FlightSearchParameters {
 
 	/**
 	 * 
-	 * @param fromAirportId - Departure airport IATA code
+	 * @param fromAirportId - Departure airport IATA code. Required
 	 */
 	public void setFromAirportId(String fromAirportId) {
 		this.fromAirportId = fromAirportId;
@@ -108,7 +146,7 @@ public class FlightSearchParameters {
 
 	/**
 	 * 
-	 * @return Arrival airport IATA code
+	 * @return Arrival airport IATA code. Required.
 	 */
 	public String getToAirportId() {
 		return toAirportId;
@@ -116,7 +154,7 @@ public class FlightSearchParameters {
 
 	/**
 	 * 
-	 * @param toAirportId - Arrival airport IATA code
+	 * @param toAirportId - Arrival airport IATA code. Required.
 	 */
 	public void setToAirportId(String toAirportId) {
 		this.toAirportId = toAirportId;
@@ -155,7 +193,7 @@ public class FlightSearchParameters {
 	}
 
 	/**
-	 * Departure date
+	 * Departure date. Local airport date. Required
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -199,7 +237,7 @@ public class FlightSearchParameters {
 	}
 	
 	/**
-	 * Return date
+	 * Return date. Local airport date. Required
 	 * @param year
 	 * @param month
 	 * @param dayOfMonth
@@ -212,19 +250,23 @@ public class FlightSearchParameters {
 
 	/**
 	 * 
-	 * @return true if departure date >= return date
+	 * @return true for round trip search.
 	 */
 	public boolean isRoundTrip() {
 		return isRoundTrip;
 	}
 	
+	/**
+	 * 
+	 * @param isRoundTrip Set to true for round trip search. Required
+	 */
 	public void setRoundTrip(boolean isRoundTrip) {
 		this.isRoundTrip = isRoundTrip;
 	}
 
 	/**
 	 * 
-	 * @return Cabin class code
+	 * @return Cabin class code. CABIN_CLASS_ECONOMY, CABIN_CLASS_BUSINESS or CABIN_CLASS_FIRST
 	 */
 	public String getCabinClass() {
 		return cabinClass;
@@ -232,7 +274,7 @@ public class FlightSearchParameters {
 
 	/**
 	 * 
-	 * @param cabinClass - Optional. Cabin class code
+	 * @param cabinClass - Optional. Cabin class code. CABIN_CLASS_ECONOMY, CABIN_CLASS_BUSINESS or CABIN_CLASS_FIRST
 	 */
 	public void setCabinClass(String cabinClass) {
 		this.cabinClass = cabinClass;
@@ -264,7 +306,7 @@ public class FlightSearchParameters {
 
 	/**
 	 * 
-	 * @param numberOfAdults - Default is 1
+	 * @param numberOfAdults Number of adults. Default is 1
 	 */
 	public void setNumberOfAdults(int numberOfAdults) {
 		this.numberOfAdults = numberOfAdults;
@@ -274,6 +316,10 @@ public class FlightSearchParameters {
 		return numberOfChildren;
 	}
 
+	/**
+	 * 
+	 * @param numberOfChildren Number of children. Optional.
+	 */
 	public void setNumberOfChildren(int numberOfChildren) {
 		this.numberOfChildren = numberOfChildren;
 	}
@@ -282,6 +328,10 @@ public class FlightSearchParameters {
 		return numberOfInfants;
 	}
 
+	/**
+	 * 
+	 * @param numberOfInfants  Number of infants. Optional.
+	 */
 	public void setNumberOfInfants(int numberOfInfants) {
 		this.numberOfInfants = numberOfInfants;
 	}
@@ -290,6 +340,10 @@ public class FlightSearchParameters {
 		return carrierCode;
 	}
 
+	/**
+	 * Optional. Carrier preference.
+	 * @param carrierCode
+	 */
 	public void setCarrierCode(String carrierCode) {
 		this.carrierCode = carrierCode;
 	}

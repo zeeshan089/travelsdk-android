@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean.flight;
 
 import java.util.ArrayList;
@@ -11,7 +41,9 @@ import com.travelfed.travelsdk.Logger;
 import com.travelfed.travelsdk.util.StringUtil;
 
 
-
+/**
+ *  Flight for flight fare. Flight can be outbound or inbound
+ */
 public class Flight {
 	
 	private Logger logger = new Logger(Flight.class);
@@ -53,7 +85,7 @@ public class Flight {
 		this.connection = connection;
 	}
 
-	/** @return List with {@link Segment} objects */
+	/** @return Flight segments (all departure and arrival airports). List with {@link Segment} objects */
 	public List<Segment> getSegments() {
 		return segments;
 	}
@@ -63,15 +95,23 @@ public class Flight {
 		this.type = type;
 	}
 
-	/** @return type */
+	/** @return TYPE_OUTBOUND or TYPE_INBOUND */
 	public String getType() {
 		return type;
 	}
 
+	/**
+	 *  Check flight is outbound
+	 *
+	 *  @return true if outbound. false is inbound.
+	 */
 	public boolean isOutbound() {
 		return TYPE_OUTBOUND.equals(getType());
 	}
 	
+	/**
+	 *  @return Duration string with hours and minutes
+	 */
 	public String getDuration() {
 		String duration = "-";
 		if(segments != null) {

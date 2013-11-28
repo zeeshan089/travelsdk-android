@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2013, Perennial UG & Co.KG.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * - Neither the name of the Perennial UG & Co.KG nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
 package com.travelfed.travelsdk.bean;
 
 import org.json.JSONException;
@@ -24,7 +54,7 @@ import com.travelfed.travelsdk.process.ProcessVerify;
 import com.travelfed.travelsdk.process.ProcessWS;
 
 /**
- * Contains server response
+ * Response from WS request.
  */
 public class Response {
 
@@ -32,7 +62,6 @@ public class Response {
 	private boolean success = true;
 	private String protocol;
 	private Result result;
-	private String resultMessage;
 	private JSONObject json;
 
 	public Response(JSONObject json, ProcessWS<? extends Result> processResult) throws JSONException {
@@ -88,36 +117,42 @@ public class Response {
 		}
 	}
 
-	/** @param error */
 	public void setError(Error error) {
 		this.error = error;
 	}
 
-	/** @return error */
+	/**
+	 *  Error object if response isn't successful.
+	 */
 	public Error getError() {
 		return error;
 	}
 
-	/** @param success */
 	public void setSuccess(boolean success) {
 		this.success = success;
 	}
 
-	/** @return success */
+	/**
+	 *  Check for successful response.
+	 */
 	public boolean isSuccess() {
 		return success;
 	}
 
-	/** @param protocol */
 	public void setProtocol(String protocol) {
 		this.protocol = protocol;
 	}
 
-	/** @return protocol */
+	/**
+	 *  Protocol version
+	 */
 	public String getProtocol() {
 		return protocol;
 	}
 
+	/**
+	 *  Result object parsed from JSON response.
+	 */
 	public Result getResult() {
 		return result;
 	}
@@ -126,10 +161,9 @@ public class Response {
 		this.result = result;
 	}
 
-	public String getResultMessage() {
-		return resultMessage;
-	}
-
+	/**
+	 *  Result JSON.
+	 */
 	public JSONObject getJson() {
 		return json;
 	}
