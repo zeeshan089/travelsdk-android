@@ -88,14 +88,9 @@ public abstract class ProcessBooking extends ProcessWS<BookingResult> {
 	 */
 	public static String generatePackageId() {
 		StringBuffer buffer = new StringBuffer();
-		
-		String unique = TravelSDK.INSTANCE.getLoginResult().getAccessToken();
-		unique = unique.substring(unique.length() - 5, unique.length());
-		
 		buffer.append(TravelSDK.INSTANCE.getAgencyInfoResult().getAgencyId()).append("|")
-				.
-		append("and").append(unique).append("|").
-		append(System.currentTimeMillis());
+		.append(TravelSDK.INSTANCE.getMobileClient()).append("|")
+		.append(System.currentTimeMillis());
 		return buffer.toString();
 	}
 

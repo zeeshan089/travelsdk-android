@@ -105,8 +105,8 @@ public class TravelSDK {
 	protected static String SERVER_AGENCY_SERVICE_URL = ADMIN_WS_URL + "agencyservice.php";
 	protected static String SERVER_IBE_BOOKING_URL = ADMIN_WS_URL + "bookingservice.php";
 
-	/** Some identification for android **/
-	public static final String MOBILE_CLIENT = "and11";
+	/** Some identification **/
+	private String mobileClient;
 
 	private ProcessInit processInit;
 	private String client;
@@ -143,6 +143,7 @@ public class TravelSDK {
 		this.password = processInit.getPassword();
 		this.client = processInit.getClient();
 		this.email = processInit.getEmail();
+		this.mobileClient = StringUtil.md5(email).substring(0, 6).toUpperCase();
 		this.securityToken = processInit.getSecurityToken();
 		this.processInit = processInit;
 		configurationUrl = ADMIN_WS_URL + "mobile.php?prgm=get_config&id=" + client;
@@ -171,7 +172,7 @@ public class TravelSDK {
 
 		StringBuffer stringBuffer = new StringBuffer(configurationUrl);
 		stringBuffer.append("&version=").append(VERSION);
-		stringBuffer.append("&userId=").append(MOBILE_CLIENT);
+		stringBuffer.append("&userId=").append(mobileClient);
 		stringBuffer.append("&agencyId=").append(client);
 
 		new RequestThread(stringBuffer.toString(), processSettingsResult).execute();
@@ -251,7 +252,7 @@ public class TravelSDK {
 			stringBuffer.append("&username=").append(username);
 			stringBuffer.append("&password=").append(password);
 			stringBuffer.append("&app=and&ver=").append(TravelSDK.VERSION);
-			stringBuffer.append("&user_id=").append(TravelSDK.MOBILE_CLIENT);
+			stringBuffer.append("&user_id=").append(mobileClient);
 
 			new RequestThread(stringBuffer.toString(), processLoginLocal).execute();
 		} catch (Exception e) {
@@ -266,7 +267,7 @@ public class TravelSDK {
 		stringBuffer.append("&access_token=").append(TravelSDK.INSTANCE.getLoginResult().getAccessToken());
 		stringBuffer.append("&client=").append(TravelSDK.INSTANCE.getAgencyInfoResult().getAgencyId());
 		stringBuffer.append("&app=and&ver=").append(TravelSDK.VERSION);
-		stringBuffer.append("&user_id=").append(TravelSDK.MOBILE_CLIENT);
+		stringBuffer.append("&user_id=").append(TravelSDK.INSTANCE.mobileClient);
 	}
 
 	/**
@@ -527,7 +528,7 @@ public class TravelSDK {
 		postParams.put("service", "book");
 		postParams.put("access_token", TravelSDK.INSTANCE.getLoginResult().getAccessToken());
 		postParams.put("client", agencyInfoResult.getAgencyId());
-		postParams.put("user_id", TravelSDK.MOBILE_CLIENT);
+		postParams.put("user_id", mobileClient);
 		postParams.put("user_name", email);
 		postParams.put("app", "and");
 		postParams.put("ver", TravelSDK.VERSION);
@@ -608,7 +609,7 @@ public class TravelSDK {
 		stringBuffer.append("?prgm=list_request");
 		stringBuffer.append("&agency_id=").append(getAgencyInfoResult().getAgencyId());
 		stringBuffer.append("&security_token=").append(securityToken);
-		stringBuffer.append("&user_id=").append(MOBILE_CLIENT);
+		stringBuffer.append("&user_id=").append(mobileClient);
 		stringBuffer.append("&source=4"); // Mobile(Blackberry)
 		stringBuffer.append("&ver=").append(VERSION);
 		stringBuffer.append("&user_name=").append(URLEncoderUtil.encodeUTF8(email));
@@ -700,5 +701,14 @@ public class TravelSDK {
 	 */
 	public void setCurrencyCode(String currencyCode) {
 		this.currencyCode = currencyCode;
+	}
+	
+	
+	/**
+	 * 
+	 * @return Mobile client identificator. Used by the TSDK API.
+	 */
+	public String getMobileClient() {
+		return mobileClient;
 	}
 }
