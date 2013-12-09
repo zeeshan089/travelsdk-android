@@ -14,3 +14,19 @@ http://wiki.travelsdk.com/index.php?title=Android_API_v1
 
 Example application project is TravelSDKExample. 
 It uses Google Maps which requires Google Play Services: http://developer.android.com/google/play-services/setup.html
+
+Actual version is 1.0 and supports following WS
+- flight search
+- flight verify
+- hotel search
+- hotel information
+- hotel verify
+- rentacar search
+- rentacar verify
+- excursion search
+- excursion verify
+- book
+- list bookings
+- airport search
+- login and configuration
+
